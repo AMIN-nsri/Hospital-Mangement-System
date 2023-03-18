@@ -13,17 +13,16 @@ namespace Hospital
     {
         static void Main(string[] args)
         {
-            //Console.ForegroundColor = ConsoleColor.Red;
-            //Console.WriteLine("Hi");
-            //Thread.Sleep(5000);
-            //Console.Clear();
+
+            //Admin admin = new Admin();
+            //admin.AddAdmin("aminoo", 1234589, 0);
+            DefaultData.Nurses();
             Message.Topic();
-            //Loading x = new Loading(10000);
             Message.Loading(5);
             String input = Console.ReadLine();
-            Message.Welcome(input);
             while (input!="e")
             {
+                Message.Welcome(input);
                 Console.WriteLine("Hi");
                 input = Console.ReadLine();
                 Console.Clear();
