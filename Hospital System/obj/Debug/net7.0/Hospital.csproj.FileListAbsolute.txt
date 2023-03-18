@@ -1,0 +1,15 @@
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/bin/Debug/net7.0/Hospital
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/bin/Debug/net7.0/Hospital.deps.json
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/bin/Debug/net7.0/Hospital.runtimeconfig.json
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/bin/Debug/net7.0/Hospital.dll
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/bin/Debug/net7.0/Hospital.pdb
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/Hospital.csproj.AssemblyReference.cache
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/Hospital.GeneratedMSBuildEditorConfig.editorconfig
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/Hospital.AssemblyInfoInputs.cache
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/Hospital.AssemblyInfo.cs
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/Hospital.csproj.CoreCompileInputs.cache
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/Hospital.dll
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/refint/Hospital.dll
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/Hospital.pdb
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/Hospital.genruntimeconfig.cache
+/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/Debug/net7.0/ref/Hospital.dll

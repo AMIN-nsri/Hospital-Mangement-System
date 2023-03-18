@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital/Hospital.csproj": {}
+    "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/Hospital.csproj": {}
   },
   "projects": {
-    "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital/Hospital.csproj": {
+    "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/Hospital.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital/Hospital.csproj",
+        "projectUniqueName": "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/Hospital.csproj",
         "projectName": "Hospital",
-        "projectPath": "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital/Hospital.csproj",
+        "projectPath": "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/Hospital.csproj",
         "packagesPath": "/Users/amin/.nuget/packages/",
-        "outputPath": "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital/obj/",
+        "outputPath": "/Users/amin/Documents/University/Term 2/C# Programming/Exercise 2 - MiniProject1/MiniProject-1---Hospital-System/Hospital System/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/amin/.nuget/NuGet/NuGet.Config"
