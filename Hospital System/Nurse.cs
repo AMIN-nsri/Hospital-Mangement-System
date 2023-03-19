@@ -8,8 +8,8 @@ namespace Hospital
 		}
         private string FirstName;
         private string LastName;
-        private int Code;
-        public void SetData(string firstname, string lastname, int code)
+        private string Code;
+        public void SetData(string firstname, string lastname, string code)
         {
             this.FirstName = firstname;
             this.LastName = lastname;

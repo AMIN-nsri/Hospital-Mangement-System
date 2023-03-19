@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace Hospital
 {
-	public class Admin
+	public class Admin:Program
 	{
 		public Admin()
 		{
@@ -29,7 +29,19 @@ namespace Hospital
 			this.Password[index] = password;
 		}
 
+		// *****Method For adding new patient
+        public SPatient[] P1 = new SPatient[20];
+        public void AddPatient(string firstname,string lastname,string id,string sickness,int roomnumber, int x=0 )
+		{
+			P1[x].FirstName = firstname;
+			P1[x].LastName = lastname;
+			P1[x].ID = id;
+			P1[x].Sickness = sickness;
+			P1[x].RoomNumber = roomnumber;
+			Message.NewPatient(P1[x].FirstName, P1[x].LastName, P1[x].ID);
+			x++;
+		}
 
-	}
+    }
 }
 

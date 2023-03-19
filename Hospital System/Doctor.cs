@@ -9,10 +9,10 @@ namespace Hospital
 		// ***** Declaring Doctors
 		private string FirstName; 
 		private string LastName; 
-		private int Code;
+		private string Code;
 		private string Expertise; 
 		private int Record; 
-		public void SetData(string firstname,string lastname, int code, string expertise, int record)
+		public void SetData(string firstname,string lastname, string code, string expertise, int record)
 		{
 			this.FirstName = firstname;
 			this.LastName = lastname;

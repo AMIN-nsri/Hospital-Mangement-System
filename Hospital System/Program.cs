@@ -14,11 +14,11 @@ namespace Hospital
         static void Main(string[] args)
         {
 
-            //Admin admin = new Admin();
-            //admin.AddAdmin("aminoo", 1234589, 0);
-            DefaultData.Nurses();
+            Admin admin = new Admin();
+            Message.Time();
             Message.Topic();
             Message.Loading(5);
+            admin.AddPatient("amin", "nasiri", "0277367816", "Covid-10", 12);
             String input = Console.ReadLine();
             while (input!="e")
             {
@@ -27,6 +27,7 @@ namespace Hospital
                 input = Console.ReadLine();
                 Console.Clear();
             }
+
         }
     }
 }
