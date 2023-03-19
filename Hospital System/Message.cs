@@ -22,6 +22,7 @@ namespace Hospital
 			Console.WriteLine("-------------Hospital Management System-------------");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        // Showing System Time
         public static void Time()
         {
             Console.ForegroundColor = ConsoleColor.DarkMagenta;
@@ -50,7 +51,21 @@ namespace Hospital
         public static void NewPatient(string firstname, string lastname, string id)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"New Patient {firstname} {lastname} with ID:'{id}' Added Successfully.");
+            Console.WriteLine($"New Patient {firstname} {lastname} With ID:'{id}' Added Successfully.");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        // Successfull Treatment
+        public static void PatientTreated(string firstname, string lastname)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Patient {firstname} {lastname} Treated Successfully.");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        // Patient Not Found
+        public static void PatientNotFound(string id)
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine($"Patient With ID: '{id}' Not Found");
             Console.ForegroundColor = ConsoleColor.White;
         }
     }

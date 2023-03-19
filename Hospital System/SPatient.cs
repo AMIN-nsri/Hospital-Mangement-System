@@ -8,6 +8,7 @@ namespace Hospital
         public string ID;
         public string Sickness;
         public int RoomNumber;
+        public bool treated;
     }
 }
 

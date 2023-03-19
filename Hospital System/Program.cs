@@ -17,8 +17,12 @@ namespace Hospital
             Admin admin = new Admin();
             Message.Time();
             Message.Topic();
-            Message.Loading(5);
             admin.AddPatient("amin", "nasiri", "0277367816", "Covid-10", 12);
+            Message.Loading(5);
+            Nurse nurse = new Nurse();
+            nurse.Treat("0277367816", admin.PatientList);
+            Console.WriteLine(admin.PatientList[0].FirstName);
+
             String input = Console.ReadLine();
             while (input!="e")
             {

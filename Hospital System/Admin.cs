@@ -29,18 +29,21 @@ namespace Hospital
 			this.Password[index] = password;
 		}
 
-		// *****Method For adding new patient
-        public SPatient[] P1 = new SPatient[20];
+        // *****Method For adding new patient
+        // Up to *50* new patient could be added
+        public SPatient[] PatientList = new SPatient[50];
         public void AddPatient(string firstname,string lastname,string id,string sickness,int roomnumber, int x=0 )
 		{
-			P1[x].FirstName = firstname;
-			P1[x].LastName = lastname;
-			P1[x].ID = id;
-			P1[x].Sickness = sickness;
-			P1[x].RoomNumber = roomnumber;
-			Message.NewPatient(P1[x].FirstName, P1[x].LastName, P1[x].ID);
+			PatientList[x].FirstName = firstname;
+			PatientList[x].LastName = lastname;
+			PatientList[x].ID = id;
+			PatientList[x].Sickness = sickness;
+			PatientList[x].RoomNumber = roomnumber;
+			Message.NewPatient(PatientList[x].FirstName, PatientList[x].LastName, PatientList[x].ID);
 			x++;
 		}
+
+		// Show Patient List
 
     }
 }

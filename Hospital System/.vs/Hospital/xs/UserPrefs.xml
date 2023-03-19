@@ -2,20 +2,21 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Admin.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Hospital PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Doctor.cs">
     <Files>
-      <File FileName="Program.cs" Line="2" Column="1" IsPinned="True" />
-      <File FileName="Message.cs" Line="35" Column="50" />
-      <File FileName="Wait.cs" Line="18" Column="7" />
-      <File FileName="Admin.cs" Line="9" Column="10" />
-      <File FileName="DefaultData.cs" Line="18" Column="18" />
+      <File FileName="Doctor.cs" Line="1" Column="1" />
+      <File FileName="Nurse.cs" Line="19" Column="38" />
+      <File FileName="SPatient.cs" Line="8" Column="22" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="Hospital" expanded="True">
             <Node name="Hospital" expanded="True">
-              <Node name="Admin.cs" selected="True" />
+              <Node name="DefaultData.cs" selected="True" />
             </Node>
           </Node>
         </State>
@@ -23,7 +24,4 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.Hospital PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

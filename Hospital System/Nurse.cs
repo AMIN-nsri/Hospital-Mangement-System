@@ -14,12 +14,21 @@ namespace Hospital
             this.FirstName = firstname;
             this.LastName = lastname;
             this.Code = code;
-            //Console.WriteLine(FirstName+ "," + LastName+","+Code);
         }
-
-        public void Treat()
+        // ****Treatment Function
+        public void Treat(string id, SPatient[] patientlist)
         {
-
+            int i;
+            for (i = 0; i < patientlist.Length ; i++)
+            {
+                if (patientlist[i].ID == id)
+                {
+                    patientlist[i].treated = true;
+                    Message.PatientTreated(patientlist[i].FirstName, patientlist[i].LastName);
+                    break;
+                }
+            }
+            if (i == patientlist.Length) Message.PatientNotFound(id);
         }
     }
 }
