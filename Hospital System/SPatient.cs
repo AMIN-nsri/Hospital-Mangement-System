@@ -9,6 +9,7 @@ namespace Hospital
         public string Sickness;
         public int RoomNumber;
         public bool treated;
+        public string Prescription;
     }
 }
 

@@ -32,18 +32,33 @@ namespace Hospital
         // *****Method For adding new patient
         // Up to *50* new patient could be added
         public SPatient[] PatientList = new SPatient[50];
-        public void AddPatient(string firstname,string lastname,string id,string sickness,int roomnumber, int x=0 )
+		int x = 0;
+        public void AddPatient(string firstname,string lastname,string id,string sickness,int roomnumber )
 		{
 			PatientList[x].FirstName = firstname;
 			PatientList[x].LastName = lastname;
 			PatientList[x].ID = id;
 			PatientList[x].Sickness = sickness;
 			PatientList[x].RoomNumber = roomnumber;
+			PatientList[x].treated = false;
 			Message.NewPatient(PatientList[x].FirstName, PatientList[x].LastName, PatientList[x].ID);
 			x++;
 		}
 
 		// Show Patient List
+		public void ShowPatients()
+		{
+			for (int i=0; i< x; i++)
+			{
+				Console.WriteLine($"{i+1,-2}. {PatientList[i].FirstName+" "+PatientList[i].LastName,-30}  #ID: {PatientList[i].ID,-15}");
+			}
+		}
+
+		// add nurse
+		// show nurses
+
+		// add doctor
+		// show doctors
 
     }
 }

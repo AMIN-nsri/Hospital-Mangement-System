@@ -19,15 +19,25 @@ namespace Hospital
 			this.Code = code;
 			this.Expertise = expertise;
 			this.Record = record;
-			//Console.WriteLine(FirstName+","+LastName+","+Expertise+","+Record+","+Code);
 		}
-        public void Visit()
+        public void Visit(string id, SPatient[] patientlist)
         {
-
+            int i;
+            for (i = 0; i < patientlist.Length; i++)
+            {
+                if (patientlist[i].ID == id)
+                {
+                    Message.PatientVisit(patientlist[i].FirstName, patientlist[i].LastName);
+					Message.PatientPrescription();
+                    break;
+                }
+            }
+            if (i == patientlist.Length) Message.PatientNotFound(id);
         }
-        public void Prescription()
+        public void Prescription(string prescription, SPatient patientlist)
 		{
-
+			patientlist.Prescription = prescription;
+			Message.PrescriptionGiven();
 		}
     }
 }
