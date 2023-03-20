@@ -23,26 +23,39 @@ namespace Hospital
 		// Up to *5* new admin could be added
         private string[] Username =new string[5];
 		private int[] Password= new int[5];
-        public void AddAdmin(string username, int password, int index)
+		int y = 0;
+        public void AddAdmin(string username, int password)
 		{
-			this.Username[index] = username;
-			this.Password[index] = password;
+			if (y < 5)
+			{
+				this.Username[y] = username;
+				this.Password[y] = password;
+				Message.NewAdmin();
+				y++;
+			}
+			else Message.MaximumAdmin();
 		}
-
+		//public void show(int i) {
+		//	Console.WriteLine(Username[i] +" " + Password[i]);
+		//}
         // *****Method For adding new patient
         // Up to *50* new patient could be added
         public SPatient[] PatientList = new SPatient[50];
-		int x = 0;
+		public int x = 0;
         public void AddPatient(string firstname,string lastname,string id,string sickness,int roomnumber )
 		{
-			PatientList[x].FirstName = firstname;
-			PatientList[x].LastName = lastname;
-			PatientList[x].ID = id;
-			PatientList[x].Sickness = sickness;
-			PatientList[x].RoomNumber = roomnumber;
-			PatientList[x].treated = false;
-			Message.NewPatient(PatientList[x].FirstName, PatientList[x].LastName, PatientList[x].ID);
-			x++;
+			if (x < 50)
+			{
+				PatientList[x].FirstName = firstname;
+				PatientList[x].LastName = lastname;
+				PatientList[x].ID = id;
+				PatientList[x].Sickness = sickness;
+				PatientList[x].RoomNumber = roomnumber;
+				PatientList[x].treated = false;
+				Message.NewPatient(PatientList[x].FirstName, PatientList[x].LastName, PatientList[x].ID);
+				x++;
+			}
+			else Message.MaximumPatient();
 		}
 
 		// Show Patient List
@@ -54,12 +67,7 @@ namespace Hospital
 			}
 		}
 
-		// add nurse
-		// show nurses
-
-		// add doctor
-		// show doctors
-
     }
 }
 
+// show patient full info

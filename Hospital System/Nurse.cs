@@ -6,15 +6,31 @@ namespace Hospital
 		public Nurse()
 		{
 		}
-        private string FirstName;
-        private string LastName;
-        private string Code;
-        public void SetData(string firstname, string lastname, string code)
+        // Method For Adding Nurse
+        SNurse[] NurseList = new SNurse[10];
+        int z = 0;
+        public void AddNurse(string firstname, string lastname, string code)
         {
-            this.FirstName = firstname;
-            this.LastName = lastname;
-            this.Code = code;
+            if (z < 10)
+            {
+                NurseList[z].FirstName = firstname;
+                NurseList[z].LastName = lastname;
+                NurseList[z].Code = code;
+                if (z > 1)
+                {
+                    Message.NewNurse(firstname, lastname, code);
+                }
+                z++;
+            }
+            else Message.MaximumNurse();
         }
+        // Declaring Default Nurses
+        public void DefaultNurse()
+        {
+            AddNurse("Azita", "Soofian", "6432");
+            AddNurse("Parisa", "Nabavi", "6481");
+        }
+
         // ****Treatment Function
         // reading prescription
         public void ReadPrescription(SPatient patientlist)
@@ -66,3 +82,5 @@ namespace Hospital
     }
 }
 
+
+// show Nurse

@@ -53,6 +53,16 @@ namespace Hospital
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"New Patient {firstname} {lastname} With ID:'{id}' Added Successfully.");
             Console.ForegroundColor = ConsoleColor.White;
+            //Message.Loading(1);
+            //Wait.ClearLine();
+        }
+        // Maximun Patient Loaded
+        public static void MaximumPatient()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Sorry!! Maximum Patient Added!");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Please Discharge Some Patient To Add More.");
         }
         // ****Search using ID or by Menu?
         public static void Select()
@@ -114,6 +124,49 @@ namespace Hospital
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Prescription Given Successfully.");
+        }
+        // New Admin Added Successfully
+        public static void NewAdmin()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"New Admin Added Successfully.");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        // Maximun Admin Loaded
+        public static void MaximumAdmin()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ERROR!! Maximum Admin Loaded!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        // Nurse Added Successfully
+        public static void NewNurse(string firstname, string lastname, string code)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"New Nurse {firstname} {lastname} With ID:'{code}' Added Successfully.");
+            Console.ForegroundColor = ConsoleColor.White;
+
+        }
+        // Maximun Nurse Loaded
+        public static void MaximumNurse()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ERROR!! Maximum Nurse Loaded!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        // Doctor Added Successfully
+        public static void NewDoctor(string lastname, string code)
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine($"Dr. {lastname} With ID:'{code}' Added Successfully.");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        // Maximun Doctor Loaded
+        public static void MaximumDoctor()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("ERROR!! Maximum Doctor Loaded!");
+            Console.ForegroundColor = ConsoleColor.White;
         }
     }
 }

@@ -6,20 +6,33 @@ namespace Hospital
 		public Doctor()
 		{
 		}
-		// ***** Declaring Doctors
-		private string FirstName; 
-		private string LastName; 
-		private string Code;
-		private string Expertise; 
-		private int Record; 
-		public void SetData(string firstname,string lastname, string code, string expertise, int record)
+        // Method For Adding Doctor
+        SDoctor[] DoctorList = new SDoctor[6];
+		int t = 0;
+		public void AddDoctor(string firstname,string lastname, string code, string expertise, int record)
 		{
-			this.FirstName = firstname;
-			this.LastName = lastname;
-			this.Code = code;
-			this.Expertise = expertise;
-			this.Record = record;
+			if (t < 6)
+			{
+				DoctorList[t].FirstName = firstname;
+				DoctorList[t].LastName = lastname;
+				DoctorList[t].Code = code;
+				DoctorList[t].Expertise = expertise;
+				DoctorList[t].Record = record;
+				if (t > 1)
+				{
+					Message.NewDoctor(lastname, code);
+				}
+				t++;
+			}
+			else Message.MaximumNurse();
 		}
+        // Declaring Default Doctors
+        public void DefaultNurse()
+        {
+            AddDoctor("Mohammad", "Amiri", "8962", "Cardiologist", 7);
+            AddDoctor("Amir", "Mohammadi", "8932", "Neurologist", 3);
+        }
+
         public void Visit(string id, SPatient[] patientlist)
         {
             int i;
@@ -42,3 +55,4 @@ namespace Hospital
     }
 }
 
+// show dr
