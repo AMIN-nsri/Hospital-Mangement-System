@@ -143,7 +143,7 @@ namespace Hospital
         public static void NewNurse(string firstname, string lastname, string code)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"New Nurse {firstname} {lastname} With ID:'{code}' Added Successfully.");
+            Console.WriteLine($"New Nurse {firstname} {lastname} With Code:'{code}' Added Successfully.");
             Console.ForegroundColor = ConsoleColor.White;
 
         }
@@ -158,7 +158,7 @@ namespace Hospital
         public static void NewDoctor(string lastname, string code)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Dr. {lastname} With ID:'{code}' Added Successfully.");
+            Console.WriteLine($"Dr. {lastname} With Code:'{code}' Added Successfully.");
             Console.ForegroundColor = ConsoleColor.White;
         }
         // Maximun Doctor Loaded

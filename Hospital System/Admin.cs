@@ -35,9 +35,6 @@ namespace Hospital
 			}
 			else Message.MaximumAdmin();
 		}
-		//public void show(int i) {
-		//	Console.WriteLine(Username[i] +" " + Password[i]);
-		//}
         // *****Method For adding new patient
         // Up to *50* new patient could be added
         public SPatient[] PatientList = new SPatient[50];
@@ -57,7 +54,6 @@ namespace Hospital
 			}
 			else Message.MaximumPatient();
 		}
-
 		// Show Patient List
 		public void ShowPatients()
 		{
@@ -66,8 +62,14 @@ namespace Hospital
 				Console.WriteLine($"{i+1,-2}. {PatientList[i].FirstName+" "+PatientList[i].LastName,-30}  #ID: {PatientList[i].ID,-15}");
 			}
 		}
+		// Show Patient Full Information
+        public void PatientFullInfo(int index)
+        {
+			Console.WriteLine($"{"Name:",-15} {PatientList[index].FirstName + " " + PatientList[index].LastName}");
+			Console.WriteLine($"{"ID:",-15} {PatientList[index].ID}");
+            Console.WriteLine($"{"Sickness:",-15} {PatientList[index].Sickness}");
+            Console.WriteLine($"{"Room Number:",-15} {PatientList[index].RoomNumber}");
+        }
 
     }
 }
-
-// show patient full info

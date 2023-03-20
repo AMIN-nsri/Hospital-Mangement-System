@@ -7,6 +7,7 @@ namespace Hospital
 		{
 		}
         // Method For Adding Nurse
+        // Up to *8* new patient could be added
         SNurse[] NurseList = new SNurse[10];
         int z = 0;
         public void AddNurse(string firstname, string lastname, string code)
@@ -30,7 +31,14 @@ namespace Hospital
             AddNurse("Azita", "Soofian", "6432");
             AddNurse("Parisa", "Nabavi", "6481");
         }
-
+        // Showing Nurses list
+        public void ShowNurses()
+        {
+            for (int i = 0; i < z; i++)
+            {
+                Console.WriteLine($"{i + 1,-2}. {NurseList[i].FirstName + " " + NurseList[i].LastName,-30}  #Code: {NurseList[i].Code,-15}");
+            }
+        }
         // ****Treatment Function
         // reading prescription
         public void ReadPrescription(SPatient patientlist)
@@ -78,9 +86,7 @@ namespace Hospital
         {
             Array.Clear(patientlist, i, patientlist.Length);
             Message.PatientDischarge(lastname);
+            // don't forget to x--
         }
     }
 }
-
-
-// show Nurse

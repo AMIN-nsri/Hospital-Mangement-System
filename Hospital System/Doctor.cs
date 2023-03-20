@@ -7,6 +7,7 @@ namespace Hospital
 		{
 		}
         // Method For Adding Doctor
+        // Up to *4* new patient could be added
         SDoctor[] DoctorList = new SDoctor[6];
 		int t = 0;
 		public void AddDoctor(string firstname,string lastname, string code, string expertise, int record)
@@ -27,12 +28,19 @@ namespace Hospital
 			else Message.MaximumNurse();
 		}
         // Declaring Default Doctors
-        public void DefaultNurse()
+        public void DefaultDoctor()
         {
             AddDoctor("Mohammad", "Amiri", "8962", "Cardiologist", 7);
             AddDoctor("Amir", "Mohammadi", "8932", "Neurologist", 3);
         }
-
+        // Show Doctors List
+        public void ShowDoctors()
+        {
+            for (int i = 0; i < t; i++)
+            {
+                Console.WriteLine($"{i + 1,-2}. {DoctorList[i].FirstName + " " + DoctorList[i].LastName,-30}  Expertise: {DoctorList[i].Expertise,-15}");
+            }
+        }
         public void Visit(string id, SPatient[] patientlist)
         {
             int i;

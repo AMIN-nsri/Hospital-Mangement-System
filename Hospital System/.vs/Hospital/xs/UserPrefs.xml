@@ -1,19 +1,19 @@
 ﻿<Properties StartupConfiguration="{72143E14-FACD-4FBE-883A-0547E469C4A2}|Default">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Hospital PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.Hospital PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
     <Files>
-      <File FileName="Program.cs" Line="33" Column="24" IsPinned="True" />
-      <File FileName="Doctor.cs" Line="40" Column="32" />
-      <File FileName="Nurse.cs" Line="67" Column="2" />
-      <File FileName="SPatient.cs" Line="12" Column="36" />
-      <File FileName="Admin.cs" Line="53" Column="122" />
-      <File FileName="Message.cs" Line="57" Column="25" />
-      <File FileName="Wait.cs" Line="20" Column="1" />
+      <File FileName="Program.cs" Line="41" Column="70" IsPinned="True" />
+      <File FileName="Doctor.cs" Line="58" Column="11" />
+      <File FileName="Nurse.cs" Line="86" Column="14" />
+      <File FileName="Admin.cs" Line="73" Column="26" />
+      <File FileName="Message.cs" Line="65" Column="74" />
+      <File FileName="Wait.cs" />
+      <File FileName="SNurse.cs" Line="8" Column="15" />
+      <File FileName="SDoctor.cs" Line="10" Column="15" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,5 +27,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

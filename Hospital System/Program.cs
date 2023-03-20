@@ -36,14 +36,19 @@ namespace Hospital
             //admin.show(2);
             //admin.show(3);
             //admin.show(4);
-
+            Doctor doctor = new Doctor();
+            doctor.DefaultDoctor();
             Nurse nurse = new Nurse();
+            // *****don't forget to use defualt nurse and doctor*****
+            // *****don't forget to x-- when using discharge method*****
             nurse.DefaultNurse();
             nurse.AddNurse("As","ghar","123");
             //nurse.show(0);
             //nurse.show(1);
             //nurse.show(2);
-
+            nurse.ShowNurses();
+            doctor.ShowDoctors();
+            admin.PatientFullInfo(2);
             //nurse.SearchPatient("0277367816", admin.PatientList);
             //Message.Loading(3);
             //nurse.SearchPatient("027767816", admin.PatientList);
