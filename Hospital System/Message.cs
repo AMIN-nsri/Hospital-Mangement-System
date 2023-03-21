@@ -43,6 +43,13 @@ namespace Hospital
             Console.WriteLine($"Welcome Dear {admin}!");
             Console.ForegroundColor = ConsoleColor.White;
         }
+        // Welcome Dr
+        public static void WelcomeDr(string lastname)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"Welcome Dr. {lastname}!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
 
         // Loading Please Wait
         public static void Loading(int pausetime)
@@ -69,7 +76,10 @@ namespace Hospital
         // ****Search using ID or by Menu?
         public static void Select()
         {
-            Console.WriteLine("Do You Want To Choose Using Menu or Search by ID?");
+            Console.WriteLine("Do You Want To Choose Using List or Search by ID?");
+            Console.WriteLine("Search by ID(S)");
+            Console.WriteLine("Show List(L)");
+            Console.WriteLine("Back(b)");
         }
         // ****Patient Found
         public static void PatientFound()
@@ -126,6 +136,7 @@ namespace Hospital
         {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Prescription Given Successfully.");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         // New Admin Added Successfully
         public static void NewAdmin()
@@ -214,5 +225,15 @@ namespace Hospital
             Console.WriteLine("Exit(e)");
 
         }
+        public static void DoctorMenu()
+        {
+            Console.WriteLine("Choose one (type key letter):");
+            Console.WriteLine("Visit(V)");
+            Console.WriteLine("Give Prescription(P)");
+            Console.WriteLine("Discharge Patient(D)");
+            Console.WriteLine("Back(b)");
+            Console.WriteLine("Exit(e)");
+        }
+       
     }
 }

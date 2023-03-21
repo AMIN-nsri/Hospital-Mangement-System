@@ -16,7 +16,7 @@ namespace Hospital
 		}
 
         // *****Declaring Main Admin
-        private string MainUsername= "amin";
+        private string MainUsername= "AMIN";
 		private int MainPassword= 12345;
 
 		// *****Method For adding new admin by user
@@ -65,13 +65,23 @@ namespace Hospital
 				PatientList[x].Sickness = sickness;
 				PatientList[x].RoomNumber = roomnumber;
 				PatientList[x].treated = false;
-				Message.NewPatient(PatientList[x].FirstName, PatientList[x].LastName, PatientList[x].ID);
+                if (x > 2)
+                {
+                    Message.NewPatient(PatientList[x].FirstName, PatientList[x].LastName, PatientList[x].ID);
+                }
 				x++;
 			}
 			else Message.MaximumPatient();
 		}
-		// Show Patient List
-		public void ShowPatients()
+		// Default Patients
+        public void DefaultPatient()
+        {
+            AddPatient("Ahmad", "emrani", "1274367816", "Flu", 10);
+            AddPatient("Mohammad", "Musavi", "1273171179", "Headache", 11);
+			AddPatient("Tohid", "Noori", "1249460727", "Covid-19", 20);
+        }
+        // Show Patient List
+        public void ShowPatients()
 		{
 			for (int i=0; i< x; i++)
 			{

@@ -15,9 +15,10 @@ namespace Hospital
 
         static void Main(string[] args)
         {
-            // *****don't forget to x-- when using discharge method*****
+            // *****don't forget to x-- when using discharge method*****      admin.x--;
 
             Admin admin = new Admin();
+            admin.DefaultPatient();
             Doctor doctor = new Doctor();
             doctor.DefaultDoctor();
             Nurse nurse = new Nurse();
@@ -41,7 +42,7 @@ namespace Hospital
                         Console.Write("User Name: ");
                         input = Console.ReadLine();
                         string username = input;
-                        Console.Write("Password: ");
+                        Console.Write("Password(Numbers Only): ");
                         input = GetPassword(); 
                         int password = int.Parse(input);
                         while (!admin.LoginCheck(username, password))
@@ -60,7 +61,7 @@ namespace Hospital
                                 break;
                             }
                             username = input;
-                            Console.Write("Password: ");
+                            Console.Write("Password(Numbers Only): ");
                             input = GetPassword(); 
                             if (input == "b")
                             {
@@ -82,6 +83,7 @@ namespace Hospital
                             {
                                 Message.Loading(2);
                                 Message.Program();
+                                Message.Welcome(username);
                                 Message.AdminMenu();
                                 string input2;
                                 input2 = Console.ReadLine();
@@ -200,7 +202,7 @@ namespace Hospital
                                         bool confirm = false;
                                         while (!confirm)
                                         {
-                                            Console.Write("Enter Password: ");
+                                            Console.Write("Enter Password(Numbers Only): ");
                                             int newpassword = int.Parse(Console.ReadLine());
                                             Console.Write("Confirm Password: ");
                                             int conpassword = int.Parse(Console.ReadLine());
@@ -219,7 +221,6 @@ namespace Hospital
                                             }
 
                                         }
-                                        //admin.AddAdmin(newusername, newpassword);
                                         break;
                                     // Turn Back
                                     case "b":
@@ -238,7 +239,177 @@ namespace Hospital
 
                     // **DOCTOR MENU
                     case "d":
-
+                        Message.Loading(1);
+                        Message.Program();
+                        Console.WriteLine("Who are you? (enter index)");
+                        doctor.ShowDoctors();
+                        string input4 = Console.ReadLine();
+                        int doctorlogin = int.Parse(input4);
+                        bool doctormenu = true;
+                        while(doctormenu)
+                        {
+                            Message.Loading(2);
+                            Message.Program();
+                            Message.WelcomeDr(doctor.DoctorList[doctorlogin - 1].LastName);
+                            Message.DoctorMenu();
+                            string input5 = Console.ReadLine();
+                            switch (input5)
+                            {
+                                case "V":
+                                    bool visit = true;
+                                    while(visit)
+                                    {
+                                        Message.Program();
+                                        Message.Select();
+                                        input4 = Console.ReadLine();
+                                        Message.Program();    //bug may happen
+                                        switch (input4)
+                                        {
+                                            case "S":
+                                                Message.Program();
+                                                Console.WriteLine("Enter patient's ID:");
+                                                string input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
+                                                int index = doctor.Visit(input6, admin.PatientList);
+                                                if (index > -1)
+                                                {
+                                                    input6 = Console.ReadLine();
+                                                    if (input6 == "b") break;
+                                                    admin.PatientList[index].Prescription = input6;
+                                                    Message.PrescriptionGiven();
+                                                }
+                                                Message.Loading(2);
+                                                break;
+                                            case "L":
+                                                Message.Program();
+                                                Console.WriteLine("Enter Patient Index:");
+                                                admin.ShowPatients();
+                                                input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
+                                                index = int.Parse(input6);
+                                                Message.PatientVisit(admin.PatientList[index - 1].FirstName, admin.PatientList[index - 1].LastName);
+                                                Message.PatientPrescription();
+                                                input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
+                                                doctor.Prescription(input6, admin.PatientList[index - 1]);
+                                                Message.Loading(2);
+                                                break;
+                                            case "b":
+                                                visit = false;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
+                                    break;
+                                case "P":
+                                    bool prescription = true;
+                                    while (prescription)
+                                    {
+                                        Message.Program();
+                                        Message.Select();
+                                        input4 = Console.ReadLine();
+                                        Message.Program();    //bug may happen
+                                        switch (input4)
+                                        {
+                                            case "S":
+                                                Message.Program();
+                                                Console.WriteLine("Enter patient's ID:");
+                                                string input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
+                                                int index = doctor.SearchPatient(input6, admin.PatientList);
+                                                if (index > -1)
+                                                {
+                                                    Message.PatientPrescription();
+                                                    input6 = Console.ReadLine();
+                                                    if (input6 == "b") break;
+                                                    admin.PatientList[index].Prescription = input6;
+                                                    Message.PrescriptionGiven();
+                                                }
+                                                Message.Loading(2);
+                                                break;
+                                            case "L":
+                                                Message.Program();
+                                                Console.WriteLine("Enter Patient Index:");
+                                                admin.ShowPatients();
+                                                input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
+                                                index = int.Parse(input6);
+                                                Message.PatientPrescription();
+                                                input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
+                                                doctor.Prescription(input6, admin.PatientList[index - 1]);
+                                                Message.Loading(2);
+                                                break;
+                                            case "b":
+                                                prescription = false;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
+                                    break;
+                                case "D":
+                                    bool discharge = true;
+                                    while (discharge)
+                                    {
+                                        Message.Program();
+                                        Message.Select();
+                                        input4 = Console.ReadLine();
+                                        Message.Program();    //bug may happen
+                                        switch (input4)
+                                        {
+                                            case "S":
+                                                Message.Program();
+                                                Console.WriteLine("Enter patient's ID:");
+                                                string input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
+                                                int index = doctor.SearchPatient(input6, admin.PatientList);
+                                                if (index > -1)
+                                                {
+                                                    Console.ForegroundColor = ConsoleColor.Green;
+                                                    Console.WriteLine($"{admin.PatientList[index].FirstName} {admin.PatientList[index].LastName} Discharged by Dr. {doctor.DoctorList[doctorlogin-1].LastName} Successfully!");
+                                                    Console.ForegroundColor = ConsoleColor.White;
+                                                    doctor.Discharge(index, admin.PatientList);
+                                                    //Array.Clear(admin.PatientList, index, admin.PatientList.Length);
+                                                    admin.x--;
+                                                }
+                                                else Message.PatientNotFound(input6);
+                                                Message.Loading(2);
+                                                break;
+                                            case "L":
+                                                Message.Program();
+                                                Console.WriteLine("Enter Patient Index:");
+                                                admin.ShowPatients();
+                                                input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
+                                                index = int.Parse(input6);
+                                                Console.ForegroundColor = ConsoleColor.Green;
+                                                Console.WriteLine($"{admin.PatientList[index-1].FirstName} {admin.PatientList[index - 1].LastName} Discharged by Dr. {doctor.DoctorList[doctorlogin].LastName} Successfully!");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                                doctor.Discharge(index - 1, admin.PatientList);
+                                                //Array.Clear(admin.PatientList, index-1, admin.PatientList.Length);
+                                                admin.x--;
+                                                Message.Loading(3);
+                                                break;
+                                            case "b":
+                                                discharge = false;
+                                                break;
+                                            default:
+                                                break;
+                                        }
+                                    }
+                                    break;
+                                case "b":
+                                    doctormenu = false;
+                                    break;
+                                case "e":
+                                    System.Environment.Exit(0);
+                                    break;
+                                default:
+                                    break;
+                            }
+                        }
                         break;
 
                     // **NURSE MENU
@@ -248,13 +419,14 @@ namespace Hospital
                     default:
                         break;
                 }
-                //Message.Program();
+                Message.Program();
                 Message.MainMenu();
                 input = Console.ReadLine();
             }
             Console.WriteLine("hi");
 
         }
+        // *Password-Hide by '*'
         private static string GetPassword()
         {
             StringBuilder input = new StringBuilder();

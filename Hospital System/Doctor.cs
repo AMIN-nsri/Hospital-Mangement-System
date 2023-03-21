@@ -8,7 +8,7 @@ namespace Hospital
 		}
         // Method For Adding Doctor
         // Up to *4* new patient could be added
-        SDoctor[] DoctorList = new SDoctor[6];
+        public SDoctor[] DoctorList = new SDoctor[6];
 		int t = 0;
 		public void AddDoctor(string firstname,string lastname, string code, string expertise, int record)
 		{
@@ -50,7 +50,22 @@ namespace Hospital
             Console.WriteLine($"{"Work Experience:",-17} {DoctorList[index].Record}years");
             Console.WriteLine("------------------------------------------------");
         }
-        public void Visit(string id, SPatient[] patientlist)
+        // searching for patient
+        public int SearchPatient(string id, SPatient[] patientlist)
+        {
+            int i;
+            for (i = 0; i < patientlist.Length; i++)
+            {
+                if (patientlist[i].ID == id)
+                {
+                    Console.WriteLine("Patient Found Successfully.");
+                    return i;
+                }
+            }
+            Message.PatientNotFound(id);
+            return -1;
+        }
+        public int Visit(string id, SPatient[] patientlist)
         {
             int i;
             for (i = 0; i < patientlist.Length; i++)
@@ -59,16 +74,25 @@ namespace Hospital
                 {
                     Message.PatientVisit(patientlist[i].FirstName, patientlist[i].LastName);
 					Message.PatientPrescription();
-                    break;
+                    return i;
                 }
             }
-            if (i == patientlist.Length) Message.PatientNotFound(id);
+            Message.PatientNotFound(id);
+            return -1;
         }
         public void Prescription(string prescription, SPatient patientlist)
 		{
 			patientlist.Prescription = prescription;
 			Message.PrescriptionGiven();
 		}
+        public void Discharge(int index, SPatient[] patientlist)
+        {
+            for (int i = index; i < patientlist.Length - 1; i++)
+            {
+                patientlist[i] = patientlist[i + 1];
+            }
+            Array.Resize(ref patientlist, patientlist.Length - 1);
+        }
     }
 }
 
