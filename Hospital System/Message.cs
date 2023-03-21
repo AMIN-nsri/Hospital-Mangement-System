@@ -19,7 +19,9 @@ namespace Hospital
         public static void Topic()
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.WriteLine("-------------Hospital Management System-------------");
+            Console.Write("-------------Hospital Management System-------------");
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.WriteLine("     back[b]");
             Console.ForegroundColor = ConsoleColor.White;
         }
         // Showing System Time
@@ -167,6 +169,50 @@ namespace Hospital
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("ERROR!! Maximum Doctor Loaded!");
             Console.ForegroundColor = ConsoleColor.White;
+        }
+        public static void Program()
+        {
+            Console.Clear();
+            Message.Time();
+            Message.Topic();
+            Message.Loading(1);
+        }
+        public static void LogedIn()
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("Logged in successfully.");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
+        public static void Wrong()
+        {
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.WriteLine("Wrong Username or Password!");
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine("Please try again or Enter 'b' to turn back.");
+        }
+
+
+        public static void MainMenu()
+        {
+            Console.WriteLine("Choose one to start(type key letter):");
+            Console.WriteLine("Admin(a)");
+            Console.WriteLine("Doctor(d)");
+            Console.WriteLine("Nurse(n)");
+            Console.WriteLine("Exit(e)");
+        }
+        public static void AdminMenu()
+        {
+            Console.WriteLine("Choose one (type key letter):");
+            Console.WriteLine("Add New Admin(A)");
+            Console.WriteLine("Add Patient(P)");
+            Console.WriteLine("Show Patients List(PL)");
+            Console.WriteLine("Add Nurse List(N)");
+            Console.WriteLine("Show Nurses(NL)");
+            Console.WriteLine("Add Doctor(D)");
+            Console.WriteLine("Show Doctors List(DL)");
+            Console.WriteLine("Back(b)");
+            Console.WriteLine("Exit(e)");
+
         }
     }
 }

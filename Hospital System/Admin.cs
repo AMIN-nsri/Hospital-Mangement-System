@@ -35,6 +35,22 @@ namespace Hospital
 			}
 			else Message.MaximumAdmin();
 		}
+		public bool LoginCheck(string username, int password)
+		{
+			if (username == MainUsername && password == MainPassword)
+				return true;
+			else
+			{
+				int i;
+                for (i = 0; i < y; i++)
+				{
+					if (username == this.Username[i] && password == this.Password[i])
+						return true;
+				}
+				//if (i == y) return false;
+			}
+			return false;
+		}
         // *****Method For adding new patient
         // Up to *50* new patient could be added
         public SPatient[] PatientList = new SPatient[50];
@@ -69,6 +85,7 @@ namespace Hospital
 			Console.WriteLine($"{"ID:",-15} {PatientList[index].ID}");
             Console.WriteLine($"{"Sickness:",-15} {PatientList[index].Sickness}");
             Console.WriteLine($"{"Room Number:",-15} {PatientList[index].RoomNumber}");
+			Console.WriteLine("------------------------------------------------");
         }
 
     }
