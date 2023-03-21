@@ -44,10 +44,10 @@ namespace Hospital
         // Doctor Full Info
         public void DoctorFullInfo(int index)
         {
-            Console.WriteLine($"{"Name:",-15} {DoctorList[index].FirstName + " " + DoctorList[index].LastName}");
-            Console.WriteLine($"{"Code:",-15} {DoctorList[index].Code}");
-            Console.WriteLine($"{"Expertise:",-15} {DoctorList[index].Expertise}");
-            Console.WriteLine($"{"Room Number:",-15} {DoctorList[index].Record}");
+            Console.WriteLine($"{"Name:",-17} {DoctorList[index].FirstName + " " + DoctorList[index].LastName}");
+            Console.WriteLine($"{"Code:",-17} {DoctorList[index].Code}");
+            Console.WriteLine($"{"Expertise:",-17} {DoctorList[index].Expertise}");
+            Console.WriteLine($"{"Work Experience:",-17} {DoctorList[index].Record}years");
             Console.WriteLine("------------------------------------------------");
         }
         public void Visit(string id, SPatient[] patientlist)

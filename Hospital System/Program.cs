@@ -6,11 +6,13 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.Text;
 
 namespace Hospital
 {
     public class Program
     {
+
         static void Main(string[] args)
         {
             // *****don't forget to x-- when using discharge method*****
@@ -40,7 +42,7 @@ namespace Hospital
                         input = Console.ReadLine();
                         string username = input;
                         Console.Write("Password: ");
-                        input = Console.ReadLine();
+                        input = GetPassword(); 
                         int password = int.Parse(input);
                         while (!admin.LoginCheck(username, password))
                         {
@@ -51,12 +53,24 @@ namespace Hospital
                             input = Console.ReadLine();
                             if (input == "b")
                             {
+                                Wait.ClearLine();
+                                Wait.ClearLine();
+                                Wait.ClearLine();
+                                Wait.ClearLine();
                                 break;
                             }
                             username = input;
                             Console.Write("Password: ");
-                            input = Console.ReadLine();
-                            if (input == "b") break;
+                            input = GetPassword(); 
+                            if (input == "b")
+                            {
+                                Wait.ClearLine();
+                                Wait.ClearLine();
+                                Wait.ClearLine();
+                                Wait.ClearLine();
+                                Wait.ClearLine();
+                                break;
+                            }
                             password = int.Parse(input);
                         }
                         if (admin.LoginCheck(username, password))
@@ -182,9 +196,30 @@ namespace Hospital
                                     case "A":
                                         Console.Write("Enter Username: ");
                                         string newusername = Console.ReadLine();
-                                        Console.Write("Enter Password: ");
-                                        int newpassword = int.Parse(Console.ReadLine());
-                                        admin.AddAdmin(newusername, newpassword);
+                                        
+                                        bool confirm = false;
+                                        while (!confirm)
+                                        {
+                                            Console.Write("Enter Password: ");
+                                            int newpassword = int.Parse(Console.ReadLine());
+                                            Console.Write("Confirm Password: ");
+                                            int conpassword = int.Parse(Console.ReadLine());
+                                            if (newpassword == conpassword)
+                                            {
+                                                admin.AddAdmin(newusername, newpassword);
+                                                confirm = true;
+                                            }
+                                            else
+                                            {
+                                                Wait.ClearLine();
+                                                Wait.ClearLine();
+                                                Console.ForegroundColor = ConsoleColor.Red;
+                                                Console.WriteLine("Password Doesn't Match!");
+                                                Console.ForegroundColor = ConsoleColor.White;
+                                            }
+
+                                        }
+                                        //admin.AddAdmin(newusername, newpassword);
                                         break;
                                     // Turn Back
                                     case "b":
@@ -219,6 +254,34 @@ namespace Hospital
             }
             Console.WriteLine("hi");
 
+        }
+        private static string GetPassword()
+        {
+            StringBuilder input = new StringBuilder();
+            while (true)
+            {
+                int x = Console.CursorLeft;
+                int y = Console.CursorTop;
+                ConsoleKeyInfo key = Console.ReadKey(true);
+                if (key.Key == ConsoleKey.Enter)
+                {
+                    Console.WriteLine();
+                    break;
+                }
+                if (key.Key == ConsoleKey.Backspace && input.Length > 0)
+                {
+                    input.Remove(input.Length - 1, 1);
+                    Console.SetCursorPosition(x - 1, y);
+                    Console.Write(" ");
+                    Console.SetCursorPosition(x - 1, y);
+                }
+                else if (key.Key != ConsoleKey.Backspace)
+                {
+                    input.Append(key.KeyChar);
+                    Console.Write("*");
+                }
+            }
+            return input.ToString();
         }
     }
 }
