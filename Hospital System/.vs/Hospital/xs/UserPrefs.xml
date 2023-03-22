@@ -1,15 +1,12 @@
 ﻿<Properties StartupConfiguration="{72143E14-FACD-4FBE-883A-0547E469C4A2}|Default">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Program.cs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Nurse.cs">
     <Files>
-      <File FileName="Program.cs" Line="157" Column="71" IsPinned="True" />
-      <File FileName="Doctor.cs" />
-      <File FileName="Nurse.cs" />
-      <File FileName="Admin.cs" />
-      <File FileName="Message.cs" />
+      <File FileName="Program.cs" Line="417" Column="1" IsPinned="True" />
+      <File FileName="Doctor.cs" Line="62" Column="1" />
+      <File FileName="Nurse.cs" Line="22" Column="24" />
+      <File FileName="Admin.cs" Line="72" Column="1" />
+      <File FileName="Message.cs" Line="88" Column="1" />
       <File FileName="Wait.cs" />
       <File FileName="SDoctor.cs" />
     </Files>
@@ -18,14 +15,17 @@
         <State name="__root__">
           <Node name="Hospital" expanded="True">
             <Node name="Hospital" expanded="True">
-              <Node name="Program.cs" selected="True" />
+              <Node name="Nurse.cs" selected="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Hospital PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Hospital PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

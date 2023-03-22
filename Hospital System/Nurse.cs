@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Reflection;
+
 namespace Hospital
 {
 	public class Nurse
@@ -8,7 +10,7 @@ namespace Hospital
 		}
         // Method For Adding Nurse
         // Up to *8* new patient could be added
-        SNurse[] NurseList = new SNurse[10];
+        public SNurse[] NurseList = new SNurse[10];
         int z = 0;
         public void AddNurse(string firstname, string lastname, string code)
         {
@@ -56,37 +58,43 @@ namespace Hospital
             {
                 if (patientlist[i].ID == id)
                 {
-                    if (!patientlist[i].treated)
-                    {
+                    //if (!patientlist[i].treated)
+                    //{
                         Message.PatientFound();
                         return i;
-                    }
-                    else
-                    {
-                        Message.AlreadyTreated();
-                        return i;
-                    }
+                    //}
+                    //else
+                    //{
+                    //    Message.AlreadyTreated();
+                    //    return i;
+                    //}
                 }
             }
-            if (i == patientlist.Length)
-            {
+            //if (i == patientlist.Length)
+            //{
                 Message.PatientNotFound(id);
                 return -1;
-            }
-            return 0;
+            //}
+            //return 0;
         }
         // treatment
-        public void Treat(SPatient[] patientlist,int i)
+        public void Treat(SPatient patientlist, SNurse nurselist)
         {
-            patientlist[i].treated = true;
-            Message.PatientTreated(patientlist[i].FirstName, patientlist[i].LastName);
+            patientlist.treated = true;
+            Message.PatientTreated(patientlist.FirstName, patientlist.LastName,nurselist.FirstName,nurselist.LastName);
         }
         // ***Discharge Patient From Hospital
-        public void Discharge(string lastname,SPatient[] patientlist, int i)
+        public void Discharge(string lastname,SPatient[] patientlist, int index)
         {
-            Array.Clear(patientlist, i, patientlist.Length);
+            for (int i = index; i < patientlist.Length - 1; i++)
+            {
+                patientlist[i] = patientlist[i + 1];
+            }
+            Array.Resize(ref patientlist, patientlist.Length - 1);
+            //Array.Clear(patientlist, i, patientlist.Length);
             Message.PatientDischarge(lastname);
             // don't forget to x--
         }
+
     }
 }

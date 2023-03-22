@@ -50,7 +50,13 @@ namespace Hospital
             Console.WriteLine($"Welcome Dr. {lastname}!");
             Console.ForegroundColor = ConsoleColor.White;
         }
-
+        // Welcome Nurse
+        public static void WelcomeNr(string firstname,string lastname)
+        {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.WriteLine($"Welcome Dear {firstname} {lastname}!");
+            Console.ForegroundColor = ConsoleColor.White;
+        }
         // Loading Please Wait
         public static void Loading(int pausetime)
         {
@@ -85,13 +91,13 @@ namespace Hospital
         public static void PatientFound()
         {
             Console.WriteLine("Patient Found Successfully.");
-            Console.WriteLine("Want To Treat or Read Docter's Prescription?");
+            //Console.WriteLine("Want To Treat or Read Docter's Prescription?");
         }
         // *****Successfull Treatment
-        public static void PatientTreated(string firstname, string lastname)
+        public static void PatientTreated(string firstname, string lastname,string Nfirstname, string Nlastname)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"Patient {firstname} {lastname} Treated Successfully.");
+            Console.WriteLine($"Patient {firstname} {lastname} Treated by {Nfirstname} {Nlastname} Successfully.");
             Console.ForegroundColor = ConsoleColor.White;
         }
         // *****Patient Not Found
@@ -107,13 +113,13 @@ namespace Hospital
             Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("Patient You Choose Is Already Treated Before.");
             Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("Want To Discharge The Patient?");
+            Console.WriteLine("Want To Discharge The Patient?([Y]es/[N]o)");
         }
         // ******Doctor Approval is required to discharge
         public static void DoctorApproval()
         {
             Console.WriteLine("Doctor Approval Is Required To Discharge.");
-            Console.WriteLine("Please Choose Doctor From Below:");
+            Console.WriteLine("Please Choose Doctor From Below(enter index):");
         }
         public static void PatientDischarge(string lastname)
         {
@@ -234,6 +240,20 @@ namespace Hospital
             Console.WriteLine("Back(b)");
             Console.WriteLine("Exit(e)");
         }
-       
+        public static void NurseMenu()
+        {
+            Console.WriteLine("Choose one (type key letter):");
+            Console.WriteLine("Treat(T)");
+            Console.WriteLine("Read Prescription(P)");
+            Console.WriteLine("Back(b)");
+            Console.WriteLine("Exit(e)");
+        }
+        public static void Default(int pausetime)
+        {
+            Message.Program();
+            Console.WriteLine("Please Enter Valid Value!");
+            Wait.Dot("", pausetime);
+        }
+
     }
 }

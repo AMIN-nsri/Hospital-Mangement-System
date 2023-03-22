@@ -64,7 +64,7 @@ namespace Hospital
 				PatientList[x].ID = id;
 				PatientList[x].Sickness = sickness;
 				PatientList[x].RoomNumber = roomnumber;
-				PatientList[x].treated = false;
+				//PatientList[x].treated = false;
                 if (x > 2)
                 {
                     Message.NewPatient(PatientList[x].FirstName, PatientList[x].LastName, PatientList[x].ID);
