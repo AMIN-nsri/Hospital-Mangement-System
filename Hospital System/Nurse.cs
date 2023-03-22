@@ -78,10 +78,12 @@ namespace Hospital
             //return 0;
         }
         // treatment
-        public void Treat(SPatient patientlist, SNurse nurselist)
+        public void Treat(SPatient[] patientlist, SNurse nurselist, int index)
         {
-            patientlist.treated = true;
-            Message.PatientTreated(patientlist.FirstName, patientlist.LastName,nurselist.FirstName,nurselist.LastName);
+            //Console.WriteLine(patientlist.treated);
+            patientlist[index].treated = true;
+            //Console.WriteLine(patientlist.treated);
+            Message.PatientTreated(patientlist[index].FirstName, patientlist[index].LastName,nurselist.FirstName,nurselist.LastName);
         }
         // ***Discharge Patient From Hospital
         public void Discharge(string lastname,SPatient[] patientlist, int index)

@@ -278,8 +278,7 @@ namespace Hospital
                                                 {
                                                     input6 = Console.ReadLine();
                                                     if (input6 == "b") break;
-                                                    admin.PatientList[index].Prescription = input6;
-                                                    Message.PrescriptionGiven();
+                                                    doctor.Prescription(input6, admin.PatientList, index);
                                                 }
                                                 Message.Loading(2);
                                                 break;
@@ -295,7 +294,7 @@ namespace Hospital
                                                 Message.PatientPrescription();
                                                 input6 = Console.ReadLine();
                                                 if (input6 == "b") break;
-                                                doctor.Prescription(input6, admin.PatientList[index - 1]);
+                                                doctor.Prescription(input6, admin.PatientList, index - 1);
                                                 Message.Loading(2);
                                                 break;
                                             // Back
@@ -316,7 +315,7 @@ namespace Hospital
                                         Message.Program();
                                         Message.Select();
                                         input4 = Console.ReadLine();
-                                        Message.Program();    //bug may happen
+                                        Message.Program();
                                         switch (input4)
                                         {
                                             // Search Patient by ID
@@ -325,14 +324,13 @@ namespace Hospital
                                                 Console.WriteLine("Enter patient's ID:");
                                                 string input6 = Console.ReadLine();
                                                 if (input6 == "b") break;
-                                                int index = doctor.SearchPatient(input6, admin.PatientList);
-                                                if (index > -1)
+                                                int index4 = doctor.SearchPatient(input6, admin.PatientList);
+                                                if (index4 > -1)
                                                 {
                                                     Message.PatientPrescription();
                                                     input6 = Console.ReadLine();
                                                     if (input6 == "b") break;
-                                                    admin.PatientList[index].Prescription = input6;
-                                                    Message.PrescriptionGiven();
+                                                    doctor.Prescription(input6, admin.PatientList,index4);
                                                 }
                                                 Message.Loading(2);
                                                 break;
@@ -343,11 +341,11 @@ namespace Hospital
                                                 admin.ShowPatients();
                                                 input6 = Console.ReadLine();
                                                 if (input6 == "b") break;
-                                                index = int.Parse(input6);
+                                                int index = int.Parse(input6);
                                                 Message.PatientPrescription();
-                                                input6 = Console.ReadLine();
-                                                if (input6 == "b") break;
-                                                doctor.Prescription(input6, admin.PatientList[index - 1]);
+                                                string input11 = Console.ReadLine();
+                                                if (input11 == "b") break;
+                                                doctor.Prescription(input11, admin.PatientList,index -1);
                                                 Message.Loading(2);
                                                 break;
                                             // Back
@@ -472,7 +470,7 @@ namespace Hospital
                                                     if (!admin.PatientList[index].treated)
                                                     {
                                                         //Message.PatientFound();
-                                                        nurse.Treat(admin.PatientList[index], nurse.NurseList[nurselogin-1]);
+                                                        nurse.Treat(admin.PatientList, nurse.NurseList[nurselogin-1], index);
                                                     }
                                                     else
                                                     {
@@ -508,7 +506,7 @@ namespace Hospital
                                                         }
                                                     }
                                                 }
-                                                Message.Loading(2);
+                                                Message.Loading(5);
                                                 Message.Program();
                                                 break;
                                             // Show List
@@ -522,7 +520,7 @@ namespace Hospital
                                                 if (!admin.PatientList[index-1].treated)
                                                 {
                                                     //Message.PatientFound();
-                                                    nurse.Treat(admin.PatientList[index - 1], nurse.NurseList[nurselogin - 1]);
+                                                    nurse.Treat(admin.PatientList, nurse.NurseList[nurselogin - 1], index - 1);
                                                 }
                                                 else
                                                 {
@@ -568,8 +566,10 @@ namespace Hospital
                                                 Message.Default(2);
                                                 break;
                                         }
+                                        Message.Program();
                                     }
                                     break;
+                                // Read Priscription
                                 case "P":
                                     bool readprescription = true;
                                     while(readprescription)
@@ -591,6 +591,8 @@ namespace Hospital
                                                     nurse.ReadPrescription(admin.PatientList[index]);
                                                 }
                                                 Message.Loading(2);
+                                                input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
                                                 break;
                                             // Show List
                                             case "L":
@@ -602,6 +604,8 @@ namespace Hospital
                                                 index = int.Parse(input6);
                                                 nurse.ReadPrescription(admin.PatientList[index - 1]);
                                                 Message.Loading(2);
+                                                input6 = Console.ReadLine();
+                                                if (input6 == "b") break;
                                                 break;
                                             // Back
                                             case "b":
@@ -611,11 +615,14 @@ namespace Hospital
                                                 Message.Default(2);
                                                 break;
                                         }
+                                        Message.Program();
                                     }
                                     break;
+                                // Back
                                 case "b":
                                     nursemenu = false;
                                     break;
+                                // Exit
                                 case "e":
                                     System.Environment.Exit(0);
                                     break;
@@ -633,9 +640,12 @@ namespace Hospital
                 Message.MainMenu();
                 input = Console.ReadLine();
             }
-            Console.WriteLine("hi");
-
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Have A Nice Time!");
+            Console.ForegroundColor = ConsoleColor.White;
         }
+
+
         // *Password-Hide by '*'
         private static string GetPassword()
         {

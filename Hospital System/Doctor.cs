@@ -80,9 +80,9 @@ namespace Hospital
             Message.PatientNotFound(id);
             return -1;
         }
-        public void Prescription(string prescription, SPatient patientlist)
+        public void Prescription(string prescription, SPatient[] patientlist, int index)
 		{
-			patientlist.Prescription = prescription;
+            patientlist[index].Prescription = prescription;
 			Message.PrescriptionGiven();
 		}
         public void Discharge(int index, SPatient[] patientlist)

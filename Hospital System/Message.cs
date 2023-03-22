@@ -21,7 +21,7 @@ namespace Hospital
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.Write("-------------Hospital Management System-------------");
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.WriteLine("     back[b]");
+            Console.WriteLine("[b]ack");
             Console.ForegroundColor = ConsoleColor.White;
         }
         // Showing System Time
@@ -33,7 +33,7 @@ namespace Hospital
             int year = pr.GetYear(dt);
             int month = pr.GetMonth(dt);
             int day = pr.GetDayOfMonth(dt);
-            Console.WriteLine($"{year}/{month}/{day}                                   {dt.ToShortTimeString()}");
+            Console.WriteLine($"{year}/{month}/{day}                                     {dt.ToShortTimeString()}");
             Console.ForegroundColor = ConsoleColor.White;
         }
         // *Welcome admin
@@ -123,7 +123,9 @@ namespace Hospital
         }
         public static void PatientDischarge(string lastname)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Patient Discharged with Dr. {lastname} Permision.");
+            Console.ForegroundColor = ConsoleColor.White;
         }
         // *****Successfull Visit
         public static void PatientVisit(string firstname, string lastname)
